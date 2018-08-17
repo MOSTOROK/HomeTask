@@ -12,12 +12,16 @@ import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver
 
 
 public class CommonPanel{
-    private void initPanel(){
-        PageFactory.initElements(getDriver(), this);
+
+   private WebElementFacade panel;
+
+    public CommonPanel(String panelLocator){
+        WebElement el = getDriver().findElement(By.xpath(panelLocator));
+        panel = WebElementFacadeImpl.wrapWebElement(getDriver(), el,8000);
     }
 
     public WebElementFacade findBy(String xpathOrCss){
-       WebElement el = getDriver().findElement(By.xpath(xpathOrCss));
-      return WebElementFacadeImpl.wrapWebElement(getDriver(),el,8000);
+       WebElement el = panel.findElement(By.xpath(xpathOrCss));
+      return WebElementFacadeImpl.wrapWebElement(getDriver(), el,8000);
     }
 }

@@ -5,7 +5,7 @@ import net.thucydides.core.steps.ScenarioSteps;
 import smava.pages.CommonPage;
 
 public class CommonPageSteps extends ScenarioSteps {
-    CommonPage commonPage;
+    private CommonPage commonPage;
 
     @Step
     public String getCurrentUrl(){

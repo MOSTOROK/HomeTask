@@ -1,6 +1,5 @@
 package smava.pages;
 
-import lombok.Getter;
 
 
 public class ResultsPage extends CommonPage {

@@ -1,7 +1,6 @@
 package smava.core;
 
 import lombok.extern.slf4j.Slf4j;
-import smava.utils.PathUtils;
 
 
 import static java.lang.System.setProperty;
@@ -24,7 +23,7 @@ public class WebDriverUtil {
         } else {
             throw new IllegalArgumentException("This browser not supported");
         }
-        log.info("Browser path set to "+ driverPath);
+        log.info("Try to set browser with path "+ driverPath);
         setProperty("webdriver.chrome.driver", driverPath);
         setProperty("serenity.browser.height", getUserDisplayHeight());
         setProperty("serenity.browser.width" , getUserDisplayWidth());

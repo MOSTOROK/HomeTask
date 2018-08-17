@@ -5,7 +5,7 @@ import net.thucydides.core.steps.ScenarioSteps;
 import smava.pages.ResultsPage;
 
 public class ResultPageSteps extends ScenarioSteps {
-    ResultsPage resultsPage;
+   private ResultsPage resultsPage;
 
     @Step
     public String getResultPageURL(){

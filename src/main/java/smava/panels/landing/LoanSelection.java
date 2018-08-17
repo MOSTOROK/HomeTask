@@ -7,11 +7,15 @@ import static java.lang.String.format;
 
 
 public class LoanSelection extends CommonPanel{
-  private final static String USAGE_DROPDOWN = "//select[@id='applicant0.loan.selection.category']";
-  private final static String AMOUNT_DROPDOWN = "//select[@id='applicant0.loan.selection.amount']";
-  private final static String PERIOD_DROPDOWN = "//div[@class='Select-value']";
-  private final static String PERIOD_OPTION = "//div[@class='Select-menu-outer']//span[contains(text(),'%s')]";
-  private final static String NEXT_BUTTON = "//button[@id='cta_btn_1']";
+  private final static String USAGE_DROPDOWN = ".//select[@id='applicant0.loan.selection.category']";
+  private final static String AMOUNT_DROPDOWN = ".//select[@id='applicant0.loan.selection.amount']";
+  private final static String PERIOD_DROPDOWN = ".//div[@class='Select-value']";
+  private final static String PERIOD_OPTION = ".//div[@class='Select-menu-outer']//span[contains(text(),'%s')]";
+  private final static String NEXT_BUTTON = ".//button[@id='cta_btn_1']";
+
+  public LoanSelection(String panelLocator) {
+    super(panelLocator);
+  }
 
   public void setUsage(String usage){
     findBy(USAGE_DROPDOWN).then().click();
@@ -25,7 +29,7 @@ public class LoanSelection extends CommonPanel{
 
   public void setPeriod(String period){
       findBy(PERIOD_DROPDOWN).then().click();
-      findBy(format(PERIOD_OPTION,period)).click();
+      findBy(format(PERIOD_OPTION, period)).click();
   }
 
   public void clickNextButton(){

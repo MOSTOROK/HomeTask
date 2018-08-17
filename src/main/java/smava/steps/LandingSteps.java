@@ -6,7 +6,7 @@ import smava.pages.LandingPage;
 import smava.utils.FrameUtils;
 
 public class LandingSteps extends ScenarioSteps {
-    LandingPage landingPage;
+   private LandingPage landingPage;
 
     @Step
     public void setUsage(String usage){
