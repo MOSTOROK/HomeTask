@@ -25,11 +25,14 @@ public class WebDriverUtil {
         }
         log.info("Try to set browser with path "+ driverPath);
         setProperty("webdriver.chrome.driver", driverPath);
-        setProperty("serenity.browser.height", getUserDisplayHeight());
-        setProperty("serenity.browser.width" , getUserDisplayWidth());
         log.info("Browser path set to "+ driverPath);
-        log.info(String.format("Display settings set to %s x %s",getUserDisplayHeight(), getUserDisplayWidth()));
+        initBrowserSize();
     }
 
+    private static void initBrowserSize(){
+        setProperty("serenity.browser.height", getUserDisplayHeight());
+        setProperty("serenity.browser.width" , getUserDisplayWidth());
+        log.info(String.format("Display settings set to %s x %s", getUserDisplayWidth(), getUserDisplayHeight()));
+    }
 
 }
