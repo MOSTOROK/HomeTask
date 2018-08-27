@@ -1,4 +1,4 @@
-package smava.panels.landing;
+package smava.panels.landing.homepage;
 
 
 import smava.panels.CommonPanel;
